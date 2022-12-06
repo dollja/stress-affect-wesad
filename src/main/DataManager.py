@@ -27,7 +27,8 @@ from keras.models import load_model
 
 class DataManager:
     # Path to the WESAD dataset
-    ROOT_PATH = '/media/learner/6663-3462/WESAD/'
+    # ROOT_PATH = '/media/learner/6663-3462/WESAD/'
+    ROOT_PATH = 'C:/Users/dollj/OneDrive/Desktop/datasets/WESAD'
     #ROOT_PATH = r'C:\WESAD'
     
     # pickle file extension for importing
