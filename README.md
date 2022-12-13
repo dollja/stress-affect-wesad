@@ -51,38 +51,51 @@ Download and extract WESAD data set so that each subject has a folder (SX, where
 
 To run the notebooks and the python module:
 
-- (1) Set a path to the git project
-- (2) Set a path to the WESAD dataset '"C:/Users/dollj/OneDrive/Desktop/datasets/WESAD"'
+- (1) Set a path to the git project ```module = os.path.abspath('C:/github/stress-affect-wesad/src/main')```
+- (2) Set a path to the WESAD dataset  ```ROOT_PATH = 'C:/Users/dollj/OneDrive/Desktop/datasets/WESAD'```
 - (3) Make sure to point DataManager.py and the Notebooks to the data source. See below example.
 - (4) Run Demo.py to prepare, create, and evaluate an LSTM NN with one epoch and also load and evalute an LSTM NN with 5 epochs.
 
-```  
-class DataManager:
-    # Path to the WESAD dataset
-    ROOT_PATH = '/media/learner/6663-3462/WESAD/'
-    #ROOT_PATH = r'C:\WESAD'
-```
-
 ### File Structure
 
-```
-insert image of directory files here
-```
+File Structure
+/
+
+demo.sh - driver that sets up, builds, trains, and tests model
+readme.md
+references/ - WESAD dataset and paper information
+src/
+src/main - Python3 modules
+DataManager.py
+Demo.py
+src/notebooks - jupyter ipython notebooks
+exploring-the-dataset.ipynb
+feature-exploration.ipynb
+feature-exploration-continued.ipynb
+model-training.ipynb
+demo
+src/models - Directory for Keras model data files
 
 ### Development Process Notes
 
 ## Results
+Performance using the LSTM based network architecture with one hidden layer
+has performed with an accuracy of ~ 97.4% on the validation set using 5 epochs.
 
-Performance using the LSTM based network architecture with one hidden layer has performed with an accuracy of ~ 97.7% on the validation set using 5 epochs.
-<img src="https://github.com/dollja/stress_affect_wesad/blob/master/src/models/results_model-2022-12-1218_56_51_epochs5_learning_rate0_05.PNG">
+With just one epoch, the model has results between ~80% and ~92% for accuracy
+on the validation data. Each epoch of training takes approximately 70 seconds
+without GPU acceleration. At 5 epochs, the model outperforms the WESAD results for both accuracy and F1 using less modalities and less features.
+
+<img src="https://github.com/dollja/stress_affect_wesad/blob/master/images/results_model-2022-12-1218_56_51_epochs5_learning_rate0_05.PNG">
 
 ## Future Work
 
 Some future work items to complete may include: adding optimization strategies to improve performance i.e. feature selection techinques, adding different ML models QDA, Decision Trees, KNN, etc., and adding visualizations to the dataset.
 
-- [ ] Add analysis and k-Fold Cross Validation
-- [ ] Add models with results for LDA, QDA, Decision Trees, KNN, SVM, PCA
-- [ ] Add visualizations to dataset
+- [ ] Add encoder-decoder attention layer 
+- [ ] Add notebook with more model results for LDA, QDA, Decision Trees, KNN, SVM, PCA, and k-fold cross validation
+- [ ] Update directions in README.md with notes on development process and performance using Windows
+
 
 ## References
 
