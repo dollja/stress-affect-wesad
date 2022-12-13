@@ -1,6 +1,22 @@
 
 # WEarable Stress and Affect Detection States
 
+## Contents
+
+* [Project Goal and Background](#project-goal-and-background)
+* [Data](#data)
+* [Model Descriptions](#model-descriptions)
+* [Model Implementation](#model-implementation)
+  * [Environment](#environment)
+  * [Directions](#directions)
+  * [File Structure](#file-structure)
+  * [Development Process Notes](#development-process-notes)
+* [Results](#results)
+* [To-Do](#to-do)
+* [References](#references)
+
+This project was tested with: Anaconda Distribution 2022.05 For Python 3.10 on Windows 11
+
 ## Project Goal and Background
 
 The goal of this project is to experiment with the WESAD multimodal dataset to become famliar with Python for deep learning.
@@ -29,9 +45,9 @@ Download and extract WESAD data set so that each subject has a folder (SX, where
 - [WESAD_all_models.ipynb](https://github.com/dollja/stress-affect-wesad/blob/main/WESAD_all_models.ipynb) contains all visualization techniques applied to the dataset
 - [WESAD_visualizationa.ipynb](https://github.com/dollja/stress-affect-wesad/blob/main/WESAD_visualization.ipynb) consists of preprocessing along with different ML models such as LDA, QDA, Decision Trees, KNN along with techniques such as k-Fold Cross Validation along with   their analysis and optimization strategies employed.
 
-# Implementation
+## Model Implementation
 
-## Environment
+### Environment
 
 #### Install the required python libraries
 
@@ -47,7 +63,7 @@ Download and extract WESAD data set so that each subject has a folder (SX, where
 - pickle
 - ipython and jupyter for jupyter notebook
 
-## Directions
+### Directions
 
 To run the notebooks and the python module:
 
@@ -59,10 +75,12 @@ To run the notebooks and the python module:
 ### File Structure
 
 File Structure
+```
 /
-
 demo.sh - driver that sets up, builds, trains, and tests model
 readme.md
+WESAD_all_models.ipynb - does not use Keras framework
+WESAD_visualization.ipynb - does not use Keras framework
 references/ - WESAD dataset and paper information
 src/
 src/main - Python3 modules
@@ -74,26 +92,24 @@ feature-exploration.ipynb
 feature-exploration-continued.ipynb
 model-training.ipynb
 demo
+
 src/models - Directory for Keras model data files
+```
 
 ### Development Process Notes
+
+ to do  - add notes on development process and WESAD_all_models.ipynb performance using Windows
 
 ## Results
 Performance using the LSTM based network architecture with one hidden layer
 has performed with an accuracy of ~ 97.4% on the validation set using 5 epochs.
 
-With just one epoch, the model has results between ~80% and ~92% for accuracy
-on the validation data. Each epoch of training takes approximately 70 seconds
-without GPU acceleration. At 5 epochs, the model outperforms the WESAD results for both accuracy and F1 using less modalities and less features.
+Windows: Learning rate = 0.05 batch size = 2 With just one epoch, the model has results between ~80% and ~92% for accuracy on the validation data. Each epoch of training takes approximately 70 seconds without GPU acceleration. At 5 epochs, the model outperforms the WESAD quoated results for both accuracy and F1 using less modalities and less features.
 
-<img src="https://github.com/dollja/stress_affect_wesad/blob/master/images/results_model-2022-12-1218_56_51_epochs5_learning_rate0_05.PNG">
+## To-Do
 
-## Future Work
-
-Some future work items to complete may include: adding optimization strategies to improve performance i.e. feature selection techinques, adding different ML models QDA, Decision Trees, KNN, etc., and adding visualizations to the dataset.
-
-- [ ] Add encoder-decoder attention layer 
-- [ ] Add notebook with more model results for LDA, QDA, Decision Trees, KNN, SVM, PCA, and k-fold cross validation
+- [ ] Add encoder-decoder model with attention layer 
+- [ ] Add notebook with LDA, QDA, Decision Trees, KNN, SVM, PCA, and k-fold cross validation
 - [ ] Update directions in README.md with notes on development process and performance using Windows
 
 
@@ -104,3 +120,5 @@ Also, many thanks to the below mentioned authors for their past work:
 -> <https://github.com/BradySheehan/wesad_experiments>
 
 -> <https://github.com/WJMatthew/WESAD>
+
+-> <https://github.com/aniketphatak09/WESAD>
