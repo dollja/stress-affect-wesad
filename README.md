@@ -72,9 +72,9 @@ Performance using the LSTM based network architecture with one hidden layer has 
 Some future work items to complete may include: adding optimization strategies to improve performance i.e. feature selection techinques, adding different ML models QDA, Decision Trees, KNN, etc., and adding visualizations to the dataset.
 
 - [x] Add analysis and optimization strategies
-- [ ] Add models such as LDA, QDA, Decision Trees, KNN, SVM, PCA
-- [ ] Add techniques such as k-Fold Cross Validation
-- [ ] Add visualizations to dataset
+- [x] Add models such as LDA, QDA, Decision Trees, KNN, SVM, PCA
+- [x] Add techniques such as k-Fold Cross Validation
+- [x] Add visualizations to dataset
 
 ## References
 
